@@ -56,7 +56,7 @@ module Devise
         path_name = mapping.path_names[name]
         [
           prefix && prefix.gsub(%r{^/}, ''),
-          path,
+          path && path.gsub(%r{^/}, ''),
           path_name && !path_name.empty? ? path_name : nil
         ]
       end
